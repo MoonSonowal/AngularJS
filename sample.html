@@ -1,0 +1,38 @@
+<html >
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+<head>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="angular-fusioncharts.js"></script>
+
+</head>
+<body>
+ 
+<div ng-app="myApp" ng-controller="customersCtrl">
+ 
+
+ 
+</div>
+ 
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+   $http.get("C:\xampp\htdocs\xampp\moonmi\3.7.0\angularPhpDB\multiseriesdatabase.php")
+   .success(function (response) {$scope.names = response.records;});
+});
+</script>
+ 
+</body>
+</html>
